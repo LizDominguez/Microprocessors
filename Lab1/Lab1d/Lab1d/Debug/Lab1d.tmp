@@ -1,0 +1,33 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\uP-Labs\Lab1\Lab1d\Lab1d\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\Debug\Lab1d.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Lab1d.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Lab1d.map</FILE>
+  <FILE>Lab1d.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</FILE><LINE>25</LINE></MAIN>
+  <Pattern><FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</FILE><LINE>20</LINE></Pattern>
+  <KITT><FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</FILE><LINE>37</LINE></KITT>
+  <BLINK><FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</FILE><LINE>43</LINE></BLINK>
+  <DELAY_10ms><FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</FILE><LINE>57</LINE></DELAY_10ms>
+  <DONE><FILE>C:\uP-Labs\Lab1\Lab1d\Lab1d\main.asm</FILE><LINE>70</LINE></DONE>
+ </LABELS>
+</ASSEMBLER_INFO>

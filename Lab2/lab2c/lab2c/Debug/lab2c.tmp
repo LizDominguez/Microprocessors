@@ -1,0 +1,34 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\uP-Labs\Lab2\lab2c\lab2c\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\uP-Labs\Lab2\lab2c\lab2c\Debug\lab2c.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab2c.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab2c.map</FILE>
+  <FILE>lab2c.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>35</LINE></MAIN>
+  <READY><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>96</LINE></READY>
+  <OUTPUT><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>55</LINE></OUTPUT>
+  <ON><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>63</LINE></ON>
+  <BLUE_OFF><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>72</LINE></BLUE_OFF>
+  <GREEN_OFF><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>81</LINE></GREEN_OFF>
+  <OFF><FILE>C:\uP-Labs\Lab2\lab2c\lab2c\main.asm</FILE><LINE>87</LINE></OFF>
+ </LABELS>
+</ASSEMBLER_INFO>

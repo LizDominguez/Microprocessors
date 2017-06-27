@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\uP-Labs\Lab2\Quiz\Quiz\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\uP-Labs\Lab2\Quiz\Quiz\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\uP-Labs\Lab2\Quiz\Quiz\Debug\Quiz.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Quiz.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Quiz.map</FILE>
+  <FILE>Quiz.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\uP-Labs\Lab2\Quiz\Quiz\main.asm</FILE><LINE>29</LINE></MAIN>
+  <READY><FILE>C:\uP-Labs\Lab2\Quiz\Quiz\main.asm</FILE><LINE>88</LINE></READY>
+  <OUTPUT><FILE>C:\uP-Labs\Lab2\Quiz\Quiz\main.asm</FILE><LINE>58</LINE></OUTPUT>
+  <ON><FILE>C:\uP-Labs\Lab2\Quiz\Quiz\main.asm</FILE><LINE>66</LINE></ON>
+  <OFF><FILE>C:\uP-Labs\Lab2\Quiz\Quiz\main.asm</FILE><LINE>78</LINE></OFF>
+ </LABELS>
+</ASSEMBLER_INFO>

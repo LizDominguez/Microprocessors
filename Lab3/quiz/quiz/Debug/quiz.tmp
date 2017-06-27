@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\uP-Labs\Lab3\quiz\quiz\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\uP-Labs\Lab3\quiz\quiz\Debug\quiz.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>quiz.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>quiz.map</FILE>
+  <FILE>quiz.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>27</LINE></MAIN>
+  <EXT_ISR><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>176</LINE></EXT_ISR>
+  <TCC0_ISR><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>197</LINE></TCC0_ISR>
+  <IO_INIT><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>40</LINE></IO_INIT>
+  <PORTA_INT0_INIT><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>58</LINE></PORTA_INT0_INIT>
+  <CLK_INIT><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>77</LINE></CLK_INIT>
+  <PWM_INIT><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>121</LINE></PWM_INIT>
+  <ON><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>35</LINE></ON>
+  <COLOR><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>142</LINE></COLOR>
+  <READY><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>164</LINE></READY>
+  <TIMER_INIT><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>94</LINE></TIMER_INIT>
+  <TIMER_INT_INIT><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>111</LINE></TIMER_INT_INIT>
+  <RESET><FILE>C:\uP-Labs\Lab3\quiz\quiz\main.asm</FILE><LINE>192</LINE></RESET>
+ </LABELS>
+</ASSEMBLER_INFO>

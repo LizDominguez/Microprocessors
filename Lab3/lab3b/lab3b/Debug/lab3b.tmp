@@ -1,0 +1,32 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\uP-Labs\Lab3\lab3b\lab3b\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\uP-Labs\Lab3\lab3b\lab3b\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\uP-Labs\Lab3\lab3b\lab3b\Debug\lab3b.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab3b.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab3b.map</FILE>
+  <FILE>lab3b.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\uP-Labs\Lab3\lab3b\lab3b\main.asm</FILE><LINE>25</LINE></MAIN>
+  <ISR_LED_COUNT><FILE>C:\uP-Labs\Lab3\lab3b\lab3b\main.asm</FILE><LINE>74</LINE></ISR_LED_COUNT>
+  <PORTF_INT0_init><FILE>C:\uP-Labs\Lab3\lab3b\lab3b\main.asm</FILE><LINE>51</LINE></PORTF_INT0_init>
+  <COLOR><FILE>C:\uP-Labs\Lab3\lab3b\lab3b\main.asm</FILE><LINE>38</LINE></COLOR>
+  <TOGGLE><FILE>C:\uP-Labs\Lab3\lab3b\lab3b\main.asm</FILE><LINE>45</LINE></TOGGLE>
+ </LABELS>
+</ASSEMBLER_INFO>
