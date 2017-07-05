@@ -1,0 +1,55 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\Debug\lab4_serial_menu.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab4_serial_menu.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab4_serial_menu.map</FILE>
+  <FILE>lab4_serial_menu.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MENU><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>22</LINE></MENU>
+  <OP1><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>23</LINE></OP1>
+  <OP2><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>24</LINE></OP2>
+  <OP3><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>25</LINE></OP3>
+  <OP4><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>26</LINE></OP4>
+  <OP5><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>27</LINE></OP5>
+  <OP6><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>28</LINE></OP6>
+  <MAIN><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>36</LINE></MAIN>
+  <CLK_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>197</LINE></CLK_INIT>
+  <USART_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>169</LINE></USART_INIT>
+  <IO_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>183</LINE></IO_INIT>
+  <READ_MENU><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>48</LINE></READ_MENU>
+  <OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>126</LINE></OUT_STRING>
+  <GET_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>54</LINE></GET_CHAR>
+  <IN_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>143</LINE></IN_CHAR>
+  <EXIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>81</LINE></EXIT>
+  <FOOD><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>91</LINE></FOOD>
+  <QUOTE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>98</LINE></QUOTE>
+  <MOVIE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>105</LINE></MOVIE>
+  <UF_COURSE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>112</LINE></UF_COURSE>
+  <HOBBY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>119</LINE></HOBBY>
+  <DONE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>87</LINE></DONE>
+  <NEXT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>130</LINE></NEXT_CHAR>
+  <RETURN_OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>138</LINE></RETURN_OUT_STRING>
+  <OUT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>156</LINE></OUT_CHAR>
+  <RX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>147</LINE></RX_POLL>
+  <TX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>160</LINE></TX_POLL>
+  <READY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>214</LINE></READY>
+ </LABELS>
+</ASSEMBLER_INFO>

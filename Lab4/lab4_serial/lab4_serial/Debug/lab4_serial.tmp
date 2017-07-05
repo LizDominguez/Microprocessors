@@ -1,0 +1,40 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\Debug\lab4_serial.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab4_serial.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab4_serial.map</FILE>
+  <FILE>lab4_serial.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <MAIN><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>22</LINE></MAIN>
+  <CLK_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>111</LINE></CLK_INIT>
+  <USART_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>83</LINE></USART_INIT>
+  <IO_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>97</LINE></IO_INIT>
+  <GET_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>34</LINE></GET_CHAR>
+  <IN_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>57</LINE></IN_CHAR>
+  <OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>40</LINE></OUT_STRING>
+  <NEXT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>44</LINE></NEXT_CHAR>
+  <RETURN_OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>52</LINE></RETURN_OUT_STRING>
+  <OUT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>70</LINE></OUT_CHAR>
+  <RX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>61</LINE></RX_POLL>
+  <TX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>74</LINE></TX_POLL>
+  <READY><FILE>C:\Microprocessors-2\Lab4\lab4_serial\lab4_serial\main.asm</FILE><LINE>128</LINE></READY>
+ </LABELS>
+</ASSEMBLER_INFO>

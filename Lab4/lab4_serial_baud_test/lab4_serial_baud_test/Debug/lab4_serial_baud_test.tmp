@@ -1,0 +1,42 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.6</VERSION>
+ <DEVICE>"ATxmega128A1U"</DEVICE>
+ <WORKING_DIR>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc</FILE>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\Debug\lab4_serial_baud_test.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>lab4_serial_baud_test.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>lab4_serial_baud_test.map</FILE>
+  <FILE>lab4_serial_baud_test.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <U><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>17</LINE></U>
+  <MAIN><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>25</LINE></MAIN>
+  <CLK_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>116</LINE></CLK_INIT>
+  <USART_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>88</LINE></USART_INIT>
+  <IO_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>102</LINE></IO_INIT>
+  <GET_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>37</LINE></GET_CHAR>
+  <OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>45</LINE></OUT_STRING>
+  <DELAY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>144</LINE></DELAY>
+  <NEXT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>49</LINE></NEXT_CHAR>
+  <RETURN_OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>57</LINE></RETURN_OUT_STRING>
+  <OUT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>75</LINE></OUT_CHAR>
+  <IN_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>62</LINE></IN_CHAR>
+  <RX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>66</LINE></RX_POLL>
+  <TX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>79</LINE></TX_POLL>
+  <READY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm</FILE><LINE>133</LINE></READY>
+ </LABELS>
+</ASSEMBLER_INFO>
