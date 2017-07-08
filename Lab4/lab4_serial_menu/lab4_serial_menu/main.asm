@@ -15,21 +15,22 @@
 
 .equ CR = 0x0D
 .equ LF = 0x0A
-.equ ESC = 0x1B
+.equ D = 0x44
 
 
 .org 0x1000
-MENU: .db "Liz's favorite:", CR, LF, "1. Food", CR, LF, "2. Quote", CR, LF, "3. Movie", CR, LF, "4. UF Course", CR, LF, "5. Hobby", CR, LF, "6. Re-display menu", CR, LF, "ESC: exit", CR, LF, 0x00
+MENU: .db "Liz's favorite:", CR, LF, "1. Food", CR, LF, "2. Quote", CR, LF, "3. Movie", CR, LF, "4. UF Course", CR, LF, "5. Hobby", CR, LF, "6. Re-display menu", CR, LF, "D: Done", CR, LF, 0x00
 OP1: .db "Liz's favorite food is anything Cuban", CR, LF, CR, LF, 0x00
 OP2: .db "Liz's favorite quote is by John Muir", CR, LF, CR, LF, 0x00
 OP3: .db "Liz's favorite movie is Howl's Moving Castle", CR, LF, CR, LF, 0x00
 OP4: .db "Liz doesn't like any UF courses", CR, LF, CR, LF, 0x00
 OP5: .db "Liz's favorite hobby is front-end development", CR, LF, CR, LF, 0x00
-OP6: .db "DONE", CR, LF, CR, LF, 0x00
+OP6: .db "Done!", CR, LF, CR, LF, 0x00
 
 
 .org 0x0000				;places code at address 0x0000
 	rjmp MAIN				;jump to start of program	
+
 
 .org 0x200				;where program begins
 
@@ -54,7 +55,7 @@ READ_MENU:
 GET_CHAR:
 
 	rcall IN_CHAR		;scans the number
-	cpi r16, ESC		;ESC
+	cpi r16, D			;Done
 	breq EXIT
 
 	cpi r16, 0x31		;1. Food

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.6  C:\Microprocessors-2\Lab4\lab4_serial_int\lab4_serial_int\main.asm Wed Jul 05 01:45:50 2017
+AVRASM ver. 2.2.6  C:\Microprocessors-2\Lab4\lab4_serial_int\lab4_serial_int\main.asm Wed Jul 05 18:58:05 2017
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc'
 C:\Microprocessors-2\Lab4\lab4_serial_int\lab4_serial_int\main.asm(10): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc'
@@ -6724,7 +6724,7 @@ C:\Microprocessors-2\Lab4\lab4_serial_int\lab4_serial_int\main.asm(10): Includin
                                  
                                  
                                  .org USARTD0_RXC_vect		;USART interrupt
-0000b0 940c 0257                 		jmp USART_ISR
+0000b0 940c 025b                 		jmp USART_ISR
                                  
                                  .org 0x200				;where program begins
                                  
@@ -6735,146 +6735,146 @@ C:\Microprocessors-2\Lab4\lab4_serial_int\lab4_serial_int\main.asm(10): Includin
 000202 e3cf                      	ldi YL, high(0x3FFF)
 000203 bfce                      	out CPU_SPH, YL	
                                  
-000204 d03b                      	rcall CLK_INIT				;initialize clock to 32MHz
-000205 d018                      	rcall USART_INIT			;initializing USARTD0
-000206 d02b                      	rcall IO_INIT
+000204 d03f                      	rcall CLK_INIT				;initialize clock to 32MHz
+000205 d01c                      	rcall USART_INIT			;initializing USARTD0
+000206 d02f                      	rcall IO_INIT
                                  
                                  
                                  BLINK:
-000207 930c                      	st X, r16
-000208 d05a                      	rcall DELAY
-000209 934c                      	st X, r20
-00020a d058                      	rcall DELAY
-00020b cffb                      	rjmp BLINK
+000207 e008                      	ldi r16, 0x08
+000208 9300 0664                 	sts PortD_OUT, r16	;set TxD to high and LED to on
+00020a d05c                      	rcall DELAY
+00020b e108                      	ldi r16, 0x18
+00020c 9300 0664                 	sts PortD_OUT, r16	;set TxD to high and LED to off
+00020e d058                      	rcall DELAY
+00020f cff7                      	rjmp BLINK
                                  
                                  
                                  IN_CHAR:
-00020c 931f                      	push r17
+000210 931f                      	push r17
                                  
                                  
                                  RX_POLL:
-00020d 9100 09a1                 	lds r16, USARTD0_STATUS		;loads status register
-00020f ff07                      	sbrs r16, 7					;reads a char if flag set	
+000211 9100 09a1                 	lds r16, USARTD0_STATUS		;loads status register
+000213 ff07                      	sbrs r16, 7					;reads a char if flag set	
                                  						
-000210 cffc                      	rjmp RX_POLL				;continues polling
-000211 9100 09a0                 	lds r16, USARTD0_DATA		;reads char into r16
-000213 911f                      	pop r17
-000214 9508                      	ret
+000214 cffc                      	rjmp RX_POLL				;continues polling
+000215 9100 09a0                 	lds r16, USARTD0_DATA		;reads char into r16
+000217 911f                      	pop r17
+000218 9508                      	ret
                                  
                                  
                                  OUT_CHAR:
-000215 931f                      	push r17
+000219 931f                      	push r17
                                  
                                  
                                  TX_POLL:
-000216 9110 09a1                 	lds r17, USARTD0_STATUS		;loads status register
-000218 ff15                      	sbrs r17, 5					;writes out char if DREIF flag set							
-000219 cffc                      	rjmp TX_POLL				
-00021a 9300 09a0                 	sts USARTD0_DATA, r16		;sends char to USART
-00021c 911f                      	pop r17
-00021d 9508                      	ret
+00021a 9110 09a1                 	lds r17, USARTD0_STATUS		;loads status register
+00021c ff15                      	sbrs r17, 5					;writes out char if DREIF flag set							
+00021d cffc                      	rjmp TX_POLL				
+00021e 9300 09a0                 	sts USARTD0_DATA, r16		;sends char to USART
+000220 911f                      	pop r17
+000221 9508                      	ret
                                  
                                  
                                  USART_INIT:
-00021e e100                      	ldi r16, 0x10
-00021f 9300 09a3                 	sts USARTD0_CTRLA, r16		;low level receiver interrupt
+000222 e100                      	ldi r16, 0x10
+000223 9300 09a3                 	sts USARTD0_CTRLA, r16		;low level receiver interrupt
                                  
-000221 e108                      	ldi r16, 0x18				;RXEN/TEXEN
-000222 9300 09a4                 	sts USARTD0_CTRLB, r16		
+000225 e108                      	ldi r16, 0x18				;RXEN/TEXEN
+000226 9300 09a4                 	sts USARTD0_CTRLB, r16		
                                  
-000224 e30b                      	ldi r16, 0x3B
-000225 9300 09a5                 	sts USARTD0_CTRLC, r16		;asynchronous/odd parity/1 stop bit/8 data
+000228 e30b                      	ldi r16, 0x3B
+000229 9300 09a5                 	sts USARTD0_CTRLC, r16		;asynchronous/odd parity/1 stop bit/8 data
                                  
-000227 e807                      	ldi r16, (BSel & 0xFF)		
-000228 9300 09a6                 	sts USARTD0_BAUDCTRLA, r16	;sets BAUDCTRLA to lower 8 bits of BSel 
+00022b e807                      	ldi r16, (BSel & 0xFF)		
+00022c 9300 09a6                 	sts USARTD0_BAUDCTRLA, r16	;sets BAUDCTRLA to lower 8 bits of BSel 
                                  
-00022a ee00                      	ldi r16, ((BScale << 4) & 0xF0) | ((BSel >> 8) & 0x0F)							
-00022b 9300 09a7                 	sts USARTD0_BAUDCTRLB, r16	;sets BAUDCTRLB to BScale | BSel 		
+00022e ee00                      	ldi r16, ((BScale << 4) & 0xF0) | ((BSel >> 8) & 0x0F)							
+00022f 9300 09a7                 	sts USARTD0_BAUDCTRLB, r16	;sets BAUDCTRLB to BScale | BSel 		
                                  
-00022d e001                      	ldi r16, 0x01				;PMIC interrupt level
-00022e 9300 00a2                 	sts PMIC_CTRL, r16
-000230 9478                      	sei							;global interrupt enable
+000231 e001                      	ldi r16, 0x01				;PMIC interrupt level
+000232 9300 00a2                 	sts PMIC_CTRL, r16
+000234 9478                      	sei							;global interrupt enable
                                  							
-000231 9508                      	ret
+000235 9508                      	ret
                                  
                                  IO_INIT:
-000232 e008                      	ldi r16, 0x08	
-000233 9300 0661                 	sts PortD_DIRSET, r16	;set TxD as output	
+000236 e108                      	ldi r16, 0x18	
+000237 9300 0661                 	sts PortD_DIRSET, r16	;set TxD and RBG_Red as outputs	
                                  					
-000235 9300 0665                 	sts PortD_OUTSET, r16	;set TxD to high
+000239 9300 0665                 	sts PortD_OUTSET, r16	;set TxD to high and LED to off
                                  					
-000237 e004                      	ldi r16, 0x04
-000238 9300 0662                 	sts PortD_DIRCLR, r16	;set RxD pin as input
+00023b e004                      	ldi r16, 0x04
+00023c 9300 0662                 	sts PortD_DIRCLR, r16	;set RxD pin as input
                                  
-00023a e00a                      	ldi r16, 0x0A			;PortQ bits 1 and 3 enable and select
-00023b 9300 07c1                 	sts PORTQ_DIRSET, r16	;PortD bits 2 and 3 serial pins 
-00023d 9300 07c6                 	sts PORTQ_OUTCLR, r16   ;connected to the USB lines
-00023f 9508                      	ret
+00023e e00a                      	ldi r16, 0x0A			;PortQ bits 1 and 3 enable and select
+00023f 9300 07c1                 	sts PORTQ_DIRSET, r16	;PortD bits 2 and 3 serial pins 
+000241 9300 07c6                 	sts PORTQ_OUTCLR, r16   ;connected to the USB lines
+000243 9508                      	ret
                                  
                                  CLK_INIT:
-000240 930f                      	push r16
+000244 930f                      	push r16
                                  
-000241 e002                      	ldi r16, 0x02					;bit 1 
-000242 9300 0050                 	sts OSC_CTRL, r16				;32 Mhz internal oscillator enable
+000245 e002                      	ldi r16, 0x02					;bit 1 
+000246 9300 0050                 	sts OSC_CTRL, r16				;32 Mhz internal oscillator enable
                                  
-000244 d008                      	rcall READY
+000248 d008                      	rcall READY
                                  
-000245 ed08                      	ldi r16, 0xD8 					;IOREG 
-000246 9300 0034                 	sts CPU_CCP, r16 				;sets configuration charge protection
+000249 ed08                      	ldi r16, 0xD8 					;IOREG 
+00024a 9300 0034                 	sts CPU_CCP, r16 				;sets configuration charge protection
                                  
-000248 e001                      	ldi r16, 0x01 					;bit 0 is 32 MHz internal oscillator
-000249 9300 0040                 	sts CLK_CTRL, r16 				;select system clock
+00024c e001                      	ldi r16, 0x01 					;bit 0 is 32 MHz internal oscillator
+00024d 9300 0040                 	sts CLK_CTRL, r16 				;select system clock
                                  
-00024b 910f                      	pop r16
-00024c 9508                      	ret
+00024f 910f                      	pop r16
+000250 9508                      	ret
                                  
                                  READY:
-00024d 930f                      	push r16					;pushing registers into stack
-00024e 931f                      	push r17
+000251 930f                      	push r16					;pushing registers into stack
+000252 931f                      	push r17
                                  
-00024f e003                      	ldi r16, 0x03				;Bit 1 is 32 MHz oscillator ready flag
-000250 9110 0051                 	lds r17, OSC_STATUS			;load oscillator status 
-000252 1710                      	cp r17, r16 				;check if status flag is set
-000253 f7c9                      	BRNE READY 					;keep waiting if flag isn't set	
+000253 e003                      	ldi r16, 0x03				;Bit 1 is 32 MHz oscillator ready flag
+000254 9110 0051                 	lds r17, OSC_STATUS			;load oscillator status 
+000256 1710                      	cp r17, r16 				;check if status flag is set
+000257 f7c9                      	BRNE READY 					;keep waiting if flag isn't set	
                                  
-000254 911f                      	pop r17
-000255 910f                      	pop r16						;popping registers from the stack
-000256 9508                      	ret 						;return to main function once ready
+000258 911f                      	pop r17
+000259 910f                      	pop r16						;popping registers from the stack
+00025a 9508                      	ret 						;return to main function once ready
                                  
                                  USART_ISR:
                                  	;Always (almost) do next 3 lines at the beginning of ISRs
-000257 930f                      	push r16				;Always do this at the beginning of ISRs
-000258 9100 003f                 	lds	r16, CPU_SREG		;Save the status bits
-00025a 930f                      	push r16				;  ...
+00025b 930f                      	push r16				;Always do this at the beginning of ISRs
+00025c 9100 003f                 	lds	r16, CPU_SREG		;Save the status bits
+00025e 930f                      	push r16				;  ...
                                  
-00025b 0000                      	nop
-00025c dfaf                      	rcall IN_CHAR
-00025d dfb7                      	rcall OUT_CHAR
+00025f 0000                      	nop
+000260 dfaf                      	rcall IN_CHAR
+000261 dfb7                      	rcall OUT_CHAR
                                  
-00025e 910f                      	pop	r16					;Restore the status bits
-00025f 9300 003f                 	sts	CPU_SREG, r16		;  ...
-000261 910f                      	pop r16
-000262 9518                      	reti
+000262 910f                      	pop	r16					;Restore the status bits
+000263 9300 003f                 	sts	CPU_SREG, r16		;  ...
+000265 910f                      	pop r16
+000266 9518                      	reti
                                  
                                  
                                  DELAY: 
-                                 
-000263 0000                      	nop					;.5 us each operation
-000264 0000                      	nop
-000265 0000                      	nop
-000266 0000                      	nop
 000267 9523                      	inc r18					;increments first counter
 000268 3f2f                      	cpi r18, 0xFF				;checks if 255
-000269 f7c9                      	brne DELAY				;jumps to beginning of loop if not equal
-00026a e020                      	ldi r18, 0x00				;resets count
-00026b 0000                      	nop
-00026c 0000                      	nop
-00026d 0000                      	nop
-00026e 0000                      	nop
-00026f 9533                      	inc r19					;increments second counter
-000270 3f3f                      	cpi r19, 0xFF				;checks if 255
-000271 f789                      	brne DELAY				;goes back to loop if not
-000272 e030                      	ldi r19, 0x00				;resets second counter
+000269 f7e9                      	brne DELAY				;jumps to beginning of loop if not equal				
+                                 
+00026a 9533                      	inc r19					;increments second counter
+00026b 3f3f                      	cpi r19, 0xFF				;checks if 255
+00026c f7d1                      	brne DELAY				;goes back to loop if not
+                                 
+00026d 9543                      	inc r20
+00026e 3244                      	cpi r20, 0x24
+00026f f7b9                      	brne DELAY
+                                 
+000270 e030                      	ldi r19, 0x00				;resets second counter
+000271 e020                      	ldi r18, 0x00
+000272 e040                      	ldi r20, 0x00
 
 
 RESOURCE USE INFORMATION
@@ -6892,36 +6892,36 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATxmega128A1U" register use summary:
-x  :   2 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
+x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  43 r17:  10 r18:   3 r19:   3 r20:   1 
+r13:   0 r14:   0 r15:   0 r16:  46 r17:  10 r18:   3 r19:   3 r20:   3 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   4 
 r29:   0 r30:   0 r31:   0 
-Registers used: 7 out of 35 (20.0%)
+Registers used: 6 out of 35 (17.1%)
 
 "ATxmega128A1U" instruction use summary:
 .lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   3 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brne  :   4 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
 brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :   0 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   1 cpc   :   0 
-cpi   :   2 cpse  :   0 dec   :   0 des   :   0 eicall:   0 eijmp :   0 
+cpi   :   3 cpse  :   0 dec   :   0 des   :   0 eicall:   0 eijmp :   0 
 elpm  :   0 eor   :   0 fmul  :   0 fmuls :   0 fmulsu:   0 icall :   0 
-ijmp  :   0 in    :   0 inc   :   2 jmp   :   1 lac   :   0 las   :   0 
-lat   :   0 ld    :   0 ldd   :   0 ldi   :  17 lds   :   5 lpm   :   0 
+ijmp  :   0 in    :   0 inc   :   3 jmp   :   1 lac   :   0 las   :   0 
+lat   :   0 ld    :   0 ldd   :   0 ldi   :  20 lds   :   5 lpm   :   0 
 lsl   :   0 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 
-mulsu :   0 neg   :   0 nop   :   9 or    :   0 ori   :   0 out   :   2 
+mulsu :   0 neg   :   0 nop   :   1 or    :   0 ori   :   0 out   :   2 
 pop   :   7 push  :   7 rcall :   8 ret   :   7 reti  :   1 rjmp  :   4 
 rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 sbi   :   0 sbic  :   0 
 sbis  :   0 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   2 sec   :   0 
 seh   :   0 sei   :   1 sen   :   0 ser   :   0 ses   :   0 set   :   0 
-sev   :   0 sez   :   0 sleep :   0 spm   :   0 st    :   2 std   :   0 
-sts   :  16 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
+sev   :   0 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 
+sts   :  18 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
 xch   :   0 
-Instructions used: 19 out of 121 (15.7%)
+Instructions used: 18 out of 121 (14.9%)
 
 "ATxmega128A1U" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%

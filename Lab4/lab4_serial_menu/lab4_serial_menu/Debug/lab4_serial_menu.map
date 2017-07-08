@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.6  C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm Wed Jul 05 01:40:29 2017
+AVRASM ver. 2.2.6  C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm Wed Jul 05 18:51:34 2017
 
 
 EQU  SIGNATURE_000 0000001e
@@ -4879,14 +4879,14 @@ EQU  BSel         00000087
 EQU  BScale       fffffffe
 EQU  CR           0000000d
 EQU  LF           0000000a
-EQU  ESC          0000001b
+EQU  D            00000044
 CSEG MENU         00001000
-CSEG OP1          00001033
-CSEG OP2          00001048
-CSEG OP3          0000105d
-CSEG OP4          00001076
-CSEG OP5          00001088
-CSEG OP6          000010a1
+CSEG OP1          00001032
+CSEG OP2          00001047
+CSEG OP3          0000105c
+CSEG OP4          00001075
+CSEG OP5          00001087
+CSEG OP6          000010a0
 CSEG MAIN         00000200
 CSEG CLK_INIT     00000268
 CSEG USART_INIT   0000024d

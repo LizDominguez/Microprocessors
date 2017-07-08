@@ -1,9 +1,9 @@
 /*
-*  Lab 4 Part 5
+*  Lab 4 Part 2
 *  Name: Elizabeth Dominguez
 *  Section: 7F34
 *  TA Name: Wesley Piard
-*  Description: Interrupt driven echo
+*  Description: Quiz
 */
 
 .nolist	
@@ -17,9 +17,12 @@
 .org 0x0000				;places code at address 0x0000
 	rjmp MAIN				;jump to start of program	
 
+.dseg
 
-.org USARTD0_RXC_vect		;USART interrupt
-		jmp USART_ISR
+.org 0x3744 
+String: .byte 255
+
+.cseg
 
 .org 0x200				;where program begins
 
@@ -30,20 +33,46 @@ MAIN:
 	ldi YL, high(0x3FFF)
 	out CPU_SPH, YL	
 
+	ldi ZL, low(String) 
+	ldi ZH, high(String)
+
 	rcall CLK_INIT				;initialize clock to 32MHz
 	rcall USART_INIT			;initializing USARTD0
 	rcall IO_INIT
 
 
-BLINK:
-	ldi r16, 0x08
-	sts PortD_OUT, r16	;set TxD to high and LED to on
-	rcall DELAY
-	ldi r16, 0x18
-	sts PortD_OUT, r16	;set TxD to high and LED to off
-	rcall DELAY
-	rjmp BLINK
+GET_CHAR:
+	rcall IN_CHAR				;receives typed character
+	st Z+, r16
+	cpi r16, 0x2E				;'.'
+	BRNE GET_CHAR
 
+	ldi ZL, low(String) 
+	ldi ZH, high(String)
+
+	call OUT_STRING
+
+	ldi ZL, low(String) 
+	ldi ZH, high(String)
+
+	rjmp GET_CHAR
+
+
+OUT_STRING:
+	push r16
+
+
+NEXT_CHAR:
+	ld r16, Z+		
+	rcall OUT_CHAR
+	cpi r16, 0x2E				;'.'
+	breq RETURN_OUT_STRING
+	rjmp NEXT_CHAR		
+
+
+RETURN_OUT_STRING:
+	pop r16
+	ret
 
 IN_CHAR:
 	push r17
@@ -72,10 +101,8 @@ TX_POLL:
 	ret
 
 
-USART_INIT:
-	ldi r16, 0x10
-	sts USARTD0_CTRLA, r16		;low level receiver interrupt
 
+USART_INIT:
 	ldi r16, 0x18				;RXEN/TEXEN
 	sts USARTD0_CTRLB, r16		
 
@@ -86,19 +113,14 @@ USART_INIT:
 	sts USARTD0_BAUDCTRLA, r16	;sets BAUDCTRLA to lower 8 bits of BSel 
 
 	ldi r16, ((BScale << 4) & 0xF0) | ((BSel >> 8) & 0x0F)							
-	sts USARTD0_BAUDCTRLB, r16	;sets BAUDCTRLB to BScale | BSel 		
-
-	ldi r16, 0x01				;PMIC interrupt level
-	sts PMIC_CTRL, r16
-	sei							;global interrupt enable
-							
+	sts USARTD0_BAUDCTRLB, r16	;sets BAUDCTRLB to BScale | BSel 								
 	ret
 
 IO_INIT:
-	ldi r16, 0x18	
-	sts PortD_DIRSET, r16	;set TxD and RBG_Red as outputs	
+	ldi r16, 0x08	
+	sts PortD_DIRSET, r16	;set TxD as output	
 					
-	sts PortD_OUTSET, r16	;set TxD to high and LED to off
+	sts PortD_OUTSET, r16	;set TxD to high
 					
 	ldi r16, 0x04
 	sts PortD_DIRCLR, r16	;set RxD pin as input
@@ -128,46 +150,10 @@ CLK_INIT:
 READY:
 	push r16					;pushing registers into stack
 	push r17
-
 	ldi r16, 0x03				;Bit 1 is 32 MHz oscillator ready flag
 	lds r17, OSC_STATUS			;load oscillator status 
 	cp r17, r16 				;check if status flag is set
 	BRNE READY 					;keep waiting if flag isn't set	
-
 	pop r17
 	pop r16						;popping registers from the stack
 	ret 						;return to main function once ready
-
-USART_ISR:
-	;Always (almost) do next 3 lines at the beginning of ISRs
-	push r16				;Always do this at the beginning of ISRs
-	lds	r16, CPU_SREG		;Save the status bits
-	push r16				;  ...
-
-	nop
-	rcall IN_CHAR
-	rcall OUT_CHAR
-
-	pop	r16					;Restore the status bits
-	sts	CPU_SREG, r16		;  ...
-	pop r16
-	reti
-
-
-DELAY: 
-	inc r18					;increments first counter
-	cpi r18, 0xFF				;checks if 255
-	brne DELAY				;jumps to beginning of loop if not equal				
-
-	inc r19					;increments second counter
-	cpi r19, 0xFF				;checks if 255
-	brne DELAY				;goes back to loop if not
-
-	inc r20
-	cpi r20, 0x24
-	brne DELAY
-
-	ldi r19, 0x00				;resets second counter
-	ldi r18, 0x00
-	ldi r20, 0x00
-	ret

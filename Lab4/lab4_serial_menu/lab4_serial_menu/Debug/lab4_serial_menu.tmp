@@ -30,26 +30,26 @@
   <OP4><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>26</LINE></OP4>
   <OP5><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>27</LINE></OP5>
   <OP6><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>28</LINE></OP6>
-  <MAIN><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>36</LINE></MAIN>
-  <CLK_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>197</LINE></CLK_INIT>
-  <USART_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>169</LINE></USART_INIT>
-  <IO_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>183</LINE></IO_INIT>
-  <READ_MENU><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>48</LINE></READ_MENU>
-  <OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>126</LINE></OUT_STRING>
-  <GET_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>54</LINE></GET_CHAR>
-  <IN_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>143</LINE></IN_CHAR>
-  <EXIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>81</LINE></EXIT>
-  <FOOD><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>91</LINE></FOOD>
-  <QUOTE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>98</LINE></QUOTE>
-  <MOVIE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>105</LINE></MOVIE>
-  <UF_COURSE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>112</LINE></UF_COURSE>
-  <HOBBY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>119</LINE></HOBBY>
-  <DONE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>87</LINE></DONE>
-  <NEXT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>130</LINE></NEXT_CHAR>
-  <RETURN_OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>138</LINE></RETURN_OUT_STRING>
-  <OUT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>156</LINE></OUT_CHAR>
-  <RX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>147</LINE></RX_POLL>
-  <TX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>160</LINE></TX_POLL>
-  <READY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>214</LINE></READY>
+  <MAIN><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>37</LINE></MAIN>
+  <CLK_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>198</LINE></CLK_INIT>
+  <USART_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>170</LINE></USART_INIT>
+  <IO_INIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>184</LINE></IO_INIT>
+  <READ_MENU><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>49</LINE></READ_MENU>
+  <OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>127</LINE></OUT_STRING>
+  <GET_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>55</LINE></GET_CHAR>
+  <IN_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>144</LINE></IN_CHAR>
+  <EXIT><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>82</LINE></EXIT>
+  <FOOD><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>92</LINE></FOOD>
+  <QUOTE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>99</LINE></QUOTE>
+  <MOVIE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>106</LINE></MOVIE>
+  <UF_COURSE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>113</LINE></UF_COURSE>
+  <HOBBY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>120</LINE></HOBBY>
+  <DONE><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>88</LINE></DONE>
+  <NEXT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>131</LINE></NEXT_CHAR>
+  <RETURN_OUT_STRING><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>139</LINE></RETURN_OUT_STRING>
+  <OUT_CHAR><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>157</LINE></OUT_CHAR>
+  <RX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>148</LINE></RX_POLL>
+  <TX_POLL><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>161</LINE></TX_POLL>
+  <READY><FILE>C:\Microprocessors-2\Lab4\lab4_serial_menu\lab4_serial_menu\main.asm</FILE><LINE>215</LINE></READY>
  </LABELS>
 </ASSEMBLER_INFO>

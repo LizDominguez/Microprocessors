@@ -99,6 +99,7 @@ USART_INIT:
 	sts USARTC0_BAUDCTRLB, r16	;sets BAUDCTRLB to BScale | BSel 								
 	ret
 
+
 IO_INIT:
 	ldi r16, 0x08	
 	sts PortC_DIRSET, r16	;set TxD as output	

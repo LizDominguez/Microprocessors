@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.6  C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm Wed Jul 05 01:43:43 2017
+AVRASM ver. 2.2.6  C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm Wed Jul 05 13:53:02 2017
 
 [builtin](2): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128a1udef.inc'
 C:\Microprocessors-2\Lab4\lab4_serial_baud_test\lab4_serial_baud_test\main.asm(10): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\XMEGAA_DFP\1.0.39\avrasm\inc\ATxmega128A1Udef.inc'
