@@ -1,12 +1,12 @@
 /*
-	Lab 5 Part 2
+	Lab 5 Part 4
 	Name: Elizabeth Dominguez
 	Section: 7F34
 	TA Name: Wesley Piard
-	Description: Using the ADC to sample a photoresistor
+	Description: Using the ADC to sample a DAD board
 */
 
-#include <avr/io.h> 
+#include <avr/io.h>
 
 
 void CLK_init(void) {
@@ -23,17 +23,17 @@ void ADC_init(void)
 {
 	
 	PORTA.DIR = 0x00;			//Port A as input
-	ADCA.CTRLA = 0x01;			//channel 0 enabled
+	ADCA.CTRLA = 0x01;			//enable
 	ADCA.CTRLB = 0x0C;			// 8 bit right adjusted, conversion mode
 	ADCA.REFCTRL = 0x30;		//AREFB
-	ADCA.CH0.CTRL = 0x83;		//Dif with gain of 1  00011
-	ADCA.CH0.MUXCTRL = 0x0A;	//Pin 1 and 6  0001010
+	ADCA.CH1.CTRL = 0x83;		//Dif with gain of 1  
+	ADCA.CH1.MUXCTRL = 0x22;	//Pin 4 and 5  0100010
 
 	
 	ADCA.INTFLAGS = 0x01;		// clearing flag
 	
-	//CDS+ PortA pin 1 ADC1
-	//CDS- PortA pin 6 ADC6
+	//IN+ PortA pin 4 
+	//IN- PortA pin 5 
 	
 }
 
@@ -41,12 +41,12 @@ void ADC_init(void)
 uint16_t ADC_read() {
 	
 	
-	ADCA.CH0.CTRL |= (1 << ADC_CH_START_bp);			//start conversion
-	while(!(ADCA.CH0.INTFLAGS & ADC_CH_CHIF_bm));		//wait until conversion is complete
+	ADCA.CH1.CTRL |= (1 << ADC_CH_START_bp);			//start conversion
+	while(!(ADCA.CH1.INTFLAGS & ADC_CH_CHIF_bm));		//wait until conversion is complete
 	ADCA.INTFLAGS = 0x01;								//clear flag
 	
 	
-	return ADCA.CH0.RES;
+	return ADCA.CH1.RES;
 	
 	
 }
@@ -57,7 +57,6 @@ int main(void)
 {
    
 	CLK_init();
-	EBI_init();
     ADC_init();	     
 
 	volatile int16_t adcVal = 0x00; 
