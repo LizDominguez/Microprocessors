@@ -67,15 +67,12 @@ void ADC_init(void)
 
 int16_t ADC_read(void) {
 	
-	
 	ADCA.CH0.CTRL |= (1 << ADC_CH_START_bp);			//start conversion
 	while(!(ADCA.CH0.INTFLAGS & ADC_CH_CHIF_bm));		//wait until conversion is complete
 	ADCA.INTFLAGS = 0x01;								//clear flag
 	
 	
 	return ADCA.CH0.RES;
-	
-	
 }
 
 void send_char(char c)
@@ -104,17 +101,26 @@ void delay_3s(void)
 
 void send_Values() {
 	
+	volatile int8_t adcVal = 0;
+	volatile int intVal = 0;
+	volatile float voltVal = 0;
+	
+	adcVal = (ADC_read() << 2);
+	
+		if (adcVal >= 0x80) {
+			send_char((char)0x2B);			//+/-
+		}
+		else  {
+			send_char((char)0x2D);
+			adcVal &= ~0x80;				 //remove sign bit
+		}
+	
+	
 	//voltVal = (1/50)*adcVal + .0098
-	volatile float voltVal = (int8_t)(ADC_read() << 2);
+	voltVal = adcVal;
 	voltVal /= 50;
 	voltVal += .0098;
-	volatile int intVal;
-	
-	if(voltVal >= 0) {
-		send_char((char)0x2B);				//+/-
-	}
-	
-	else send_char((char)0x2D);
+
 	
 	intVal = (int)voltVal;					//1st iteration
 	send_char((char)(intVal + '0'));
@@ -130,10 +136,16 @@ void send_Values() {
 	send_char((char)0x20);					//space
 	
 	//hex Values
-	send_char((char)0x28);					//(
-	send_char((char)(ADC_read() << 2));
-	send_char((char)0x29);					//)
-	send_char((char)0x20);					//space
+	volatile int8_t hexVal = 0; 
+	hexVal = (adcVal >> 1);
+	
+	send_char((char)0x28);							//(
+	send_char((char)0x30);							//0
+	send_char((char)0x78);							//x;
+	send_char((char)(hexVal + '0'));				//firs byte
+	send_char((char)((adcVal & 0x0F) + '0'));		//second byte
+	send_char((char)0x29);							//)
+	send_char((char)0x20);							//space
 	
 	
 }
