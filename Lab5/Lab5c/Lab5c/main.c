@@ -85,19 +85,13 @@ void send_char(char c)
 }
 
 
-void send_string(char *text)
-{
-	while(*text)
-	{
-		send_char(*text++);
-	}
-}
-
 void delay_3s(void)
 {
 	volatile uint32_t ticks;				//Volatile prevents compiler optimization
 	for(ticks = 0; ticks <= 2000000; ticks++);	//increment 2e6 times -> ~ 1 sec
 }
+
+
 
 void send_Values() {
 	
@@ -105,17 +99,18 @@ void send_Values() {
 	volatile int intVal = 0;
 	volatile float voltVal = 0;
 	
-	adcVal = (ADC_read() << 2);
+	adcVal = ADC_read();
 	
-		if (adcVal >= 0x80) {
-			send_char((char)0x2B);			//+/-
-		}
-		else  {
-			send_char((char)0x2D);
-			adcVal &= ~0x80;				 //remove sign bit
-		}
+	if (adcVal >= 0x80) {
+						//+/-
+		send_char((char)0x2D);
+		adcVal *= -1;
+	}
 	
-	
+	else  {
+		send_char((char)0x2B);
+	}
+
 	//voltVal = (1/50)*adcVal + .0098
 	voltVal = adcVal;
 	voltVal /= 50;

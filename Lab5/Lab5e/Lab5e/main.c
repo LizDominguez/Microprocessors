@@ -40,25 +40,18 @@ void CLK_init() {
 void ADC_init()
 {
 		PORTA.DIR = 0x00;			//Port A as input
-		ADCA.CTRLA = 0x01;			//channel 0 enabled
-		ADCA.CTRLB = 0x0C;			// 8 bit right adjusted, conversion mode
+		ADCA.CTRLA = 0x09;			//enable
+		ADCA.CTRLB = 0x1C;			// 8 bit right adjusted, conversion mode
 		ADCA.REFCTRL = 0x30;		//AREFB
+		ADCA.EVCTRL = 0x40;
 	
 		ADCA.CH0.CTRL = 0x83;		//Dif with gain of 1  00011
 		ADCA.CH0.MUXCTRL = 0x0A;	//Pin 1 and 6  0001010
 
-		
-			ADCA.CH1.CTRL = 0x83;		//Dif with gain of 1
-			ADCA.CH1.MUXCTRL = 0x22;	//Pin 4 and 5  0100010
-		
-		ADCA.CMP = 0x00;			//setting threshold value
-
-		ADCA.CH0.INTCTRL = 0x06;	//high lvl interrupt, below threshold
-		ADCA.CH1.INTCTRL = 0x0E;	//high lvl interrupt, above threshold
-		
-		PMIC.CTRL = 0x03;			//high lvl interrupt
-		
-		ADCA.INTFLAGS = 0x01;		// clearing flag
+			
+		ADCA.CH1.CTRL = 0x83;		//Dif with gain of 1
+		ADCA.CH1.MUXCTRL = 0x21;	//Pin 4 and 5  0100010
+	
 	
 }
 
@@ -105,19 +98,6 @@ void EBI_init()
 }
 
 
-ISR(ADCA_CH0_vect) {
-	
-	PORTD.OUT &= ~0x10; //turn on red rgb LED
-	
-}
-
-ISR(ADCA_CH1_vect){
-	
-	PORTD.OUT &= ~0x40; //turn on blue LED
-	
-	
-}
-
 
 uint16_t read_photoresistor() {
 	
@@ -138,7 +118,7 @@ uint16_t read_DAD() {
 	
 	ADCA.CH1.CTRL |= (1 << ADC_CH_START_bp);			//start conversion
 	while(!(ADCA.CH1.INTFLAGS & ADC_CH_CHIF_bm));		//wait until conversion is complete
-	ADCA.INTFLAGS = 0x01;								//clear flag
+	ADCA.INTFLAGS = 0x02;								//clear flag
 	
 	
 	return ADCA.CH1.RES;
@@ -176,36 +156,6 @@ char receive_char()
 }
 
 
-
-void timer_on() {
-	
-		TCC0.PERL = 0xFF; 			//Top value to 255
-		TCC0.PERH = 0x00;
-		TCC0.CTRLA = 0x07; 			//1024 prescaler
-		TCC0.CTRLB = 0x00;			//normal mode
-		TCC0.INTCTRLA = 0x02; 		//high-level interrupt
-	
-		PMIC.CTRL = 0x03;			//high level interrupt
-		TCC0.INTFLAGS = 0x01;		//clear flag
-		
-}
-
-
-
-void timer_off() {
-	
-	TCC0.CTRLA = 0x00; 			//disable timer
-	
-}
-
-
-ISR (TCC0_OVF_vect) {
-	
-	uint16_t adcVal = 0;
-	adcVal = read_photoresistor();
-	send_string(adcVal);
-	
-}
 
 
 
@@ -245,6 +195,55 @@ void delay_50us(void)
 }
 
 
+void send_Values(int16_t adcVal) {
+	
+	volatile int intVal = 0;
+	volatile float voltVal = 0;
+
+
+	//voltVal = (1/50)*adcVal + .0098
+	voltVal = (int8_t)(adcVal << 4);
+	voltVal /= 50;
+	voltVal += .0098;
+
+	if (voltVal >= 0) {
+		send_char((char)0x2B);				//+/-
+	}
+	
+	else  {
+		send_char((char)0x2D);
+	}
+	
+	intVal = (int)voltVal;					//1st iteration
+	send_char((char)(intVal + '0'));
+	send_char((char)0x2E);					//.
+	
+	voltVal = 10*(voltVal - intVal);		//2nd iteration
+	intVal = (int)voltVal;
+	send_char((char)(intVal + '0'));
+	
+	voltVal = 10*(voltVal - intVal);		//3rd iteration
+	intVal = (int)voltVal;
+	send_char((char)(intVal + '0'));
+	send_char((char)0x20);					//space
+	
+	//hex Values
+	volatile int8_t hexVal = 0;
+	hexVal = (adcVal >> 1);
+	
+	send_char((char)0x28);							//(
+	send_char((char)0x30);							//0
+	send_char((char)0x78);							//x;
+	send_char((char)(hexVal + '0'));				//firs byte
+	send_char((char)((adcVal & 0x0F) + '0'));		//second byte
+	send_char((char)0x29);							//)
+	send_char((char)0x20);							//space
+	
+	
+}
+
+
+
 
 void determine_function(char op) {
 	
@@ -254,20 +253,20 @@ void determine_function(char op) {
 
 		case 'a':
 		adcVal = read_photoresistor();
-		send_char(adcVal);
+		send_Values(adcVal);
 		break; 
 		
 		case 'b':
 		adcVal = read_DAD();
-		send_char(adcVal);
+		send_Values(adcVal);
 		break; 
 		
 		case 'c':
-		timer_on();
+		//timer_on();
 		break;
 		
 		case 'd':
-		timer_off();
+		//timer_off();
 		break;
 		
 		case 'e':
