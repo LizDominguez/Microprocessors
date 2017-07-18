@@ -9,19 +9,28 @@
 #include <avr/io.h>
 
 
+void CLK_init(void) {
+	
+	OSC.CTRL = 0x02;							//32 Mhz internal oscillator enable
+	while(!(OSC.STATUS & OSC_RC32MRDY_bm));		//wait for 32 MHz oscillator ready flag
+	CPU_CCP = 0xD8; 							//IOREG
+	CLK.CTRL = 0x01; 							//bit 0 is 32 MHz internal oscillator
+	
+}
 
 void SPI_init()
 {
 	PORTF.DIR = 0xB0; //SS, MOSI, SCK
-
+	
 	SPIF.CTRL = SPI_ENABLE_bm |				//enable
 				SPI_DORD_bm	  |				//data order lsb
 				SPI_MASTER_bm |				//Master select
 				SPI_MODE0_bm  |				//mode 0 rising leading edge
-				SPI_PRESCALER_DIV16_gc;		//prescaler of 16
+				SPI_PRESCALER_DIV128_gc;	//prescaler of 128
 	
 
 }
+
 
 uint8_t spiWrite(uint8_t data) {
 				
@@ -41,7 +50,8 @@ uint8_t spiRead() {
 
 int main(void)
 {
-    SPI_init();	  
+	CLK_init();
+    SPI_init();	 
 	      
 	volatile uint8_t writeRes, readRes;
 	
